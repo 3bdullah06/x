@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+<a style="text-decoration: none;" href="test.html" target="_blank">
+      <span
+        style="
+          font-size: 25px;
+          font-weight: bold;
+          color: palevioletred;
+          background-color: white;
+          position: relative;
+          left: 75%;
+          padding: 15px;
+          border-radius: 8px;
+          text-align: center;
+          cursor: pointer;
+          top: 20px;
+        "
+        >Click Here To Start</span
+
+    >
+    <div class="video-background">
+      <video id="background-video" autoplay muted loop>
+        <source src="../background/1111.mp4" type="video/mp4" />
+        متصفحك لا يدعم عرض الفيديو.
+      </video>
+    </div>
+    <div class="content">
+      <h1>Welcome To Our Website</h1>
+    </div>
+    <span class="up">Up</span>
+    <form class="form" action="" method="post">
+      <input id="username" type="text" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+    </form>
+    <button id="submit">submit</button>
+    <script>
+      let span = document.querySelector(".up");
+
+      window.onscroll = function () {
+        this.scrollY >= 300
+          ? span.classList.add("show")
+          : span.classList.remove("show");
+      };
+
+      span.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      };
+      let btn = document.getElementById("submit");
+      let userName = document.getElementById("username");
+      let password = document.getElementById("password");
+      btn.addEventListener("click", function () {
+        if (
+          userName.value === "3bdallah.pk" &&
+          password.value === "5267579905"
+        ) {
+          document.querySelector(".form").classList.add("test");
+          document.querySelector("button").style = "display:none;";
+          setTimeout(function () {
+            document.querySelector(".content").classList.add("after");
+          }, 1000);
+
+          setTimeout(function () {
+            document.querySelector(".content").classList.remove("after");
+          }, 5000);
+        }
+      });
+    </script>
+  </body>
+</html>
